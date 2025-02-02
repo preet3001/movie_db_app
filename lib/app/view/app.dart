@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_db_app/counter/counter.dart';
+import 'package:movie_db_app/app/router/app_router.dart';
 import 'package:movie_db_app/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -16,7 +16,7 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }
 }
