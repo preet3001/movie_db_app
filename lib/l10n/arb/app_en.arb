@@ -1,5 +1,13 @@
 {
     "@@locale": "en",
+    "loginAppBarTitle":"Login",
+    "email": "Email",
+    "emailValidation": "Enter Valid Email",
+    "passwordValidation": "Enter Valid Password",
+    "loginSuccess": "Login Successful",
+    "loginFailed": "Login Failed",
+    "username": "Username",
+    "password": "Password",
     "counterAppBarTitle": "Counter",
     "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
