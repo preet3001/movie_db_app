@@ -12,6 +12,8 @@ Dummy Movie DB app using bloc
 
 ## Getting Started 🚀
 
+To Run the project get your api key from https://developer.themoviedb.org and put it in the env file
+
 This project contains 3 flavors:
 
 - development
