@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_db_app/dashboard/view/dashboard_page.dart';
 import 'package:movie_db_app/l10n/l10n.dart';
 import 'package:movie_db_app/login/bloc/login_bloc/login_bloc.dart';
 import 'package:movie_db_app/login/bloc/login_bloc/login_event.dart';
@@ -29,8 +30,10 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController =
+      TextEditingController(text: 'admin@gmail.com');
+  final TextEditingController passwordController =
+      TextEditingController(text: 'admin');
   final GlobalKey<FormState> formKey = GlobalKey();
 
   @override
@@ -59,6 +62,7 @@ class _LoginViewState extends State<LoginView> {
               child: TextFormField(
                 controller: emailController,
                 keyboardType: TextInputType.emailAddress,
+                onTapOutside: (_) => primaryFocus?.unfocus(),
                 decoration: InputDecoration(
                   label: Text(context.l10n.email),
                 ),
@@ -84,6 +88,7 @@ class _LoginViewState extends State<LoginView> {
                   return TextFormField(
                     controller: passwordController,
                     obscureText: isObscure,
+                    onTapOutside: (_) => primaryFocus?.unfocus(),
                     decoration: InputDecoration(
                       label: Text(context.l10n.password),
                       suffixIcon: IconButton(
@@ -114,7 +119,8 @@ class _LoginViewState extends State<LoginView> {
                         content: Text(context.l10n.loginSuccess),
                       ),
                     );
-                  //navigate
+                    Navigator.of(context)
+                        .pushReplacementNamed(DashboardPage.route);
                   case LoginFailure():
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
